@@ -1,0 +1,84 @@
+﻿<Window x:Class="UsingAStarSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AStar Engine Component Sample" Height="506" Width="525" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="White">    
+    <Grid Width="505" Background="{x:Null}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="228*" />
+            <ColumnDefinition Width="277*" />
+        </Grid.ColumnDefinitions>
+        <Grid Height="299" HorizontalAlignment="Left" Margin="29,82,0,0" Name="astarOutputGrid1" VerticalAlignment="Top" Width="362" Grid.ColumnSpan="2">
+        <Border BorderThickness="1" BorderBrush="Chartreuse">
+            <Grid Name="astarOutputGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <SolidColorBrush />
+                </Grid.Background>
+            </Grid>
+           
+        </Border>
+    </Grid>
+    <Button Content="Find Solution" Height="18" HorizontalAlignment="Right" Margin="0,387,116,0" Name="btnStartFind" VerticalAlignment="Top" Width="65" Click="btnStartFind_Click" FontSize="10" Grid.Column="1" />
+       
+        <TextBox Height="32" HorizontalAlignment="Left" Margin="30,424,0,0" Name="txtMessages" VerticalAlignment="Top" Width="466" IsEnabled="False" Grid.ColumnSpan="2" />
+        <Button Content="Re-Init" Height="18" HorizontalAlignment="Left" Margin="30,387,0,0" Name="btnReInitSearchArea" VerticalAlignment="Top" Width="42" ToolTip="Forces AStar engine to recreate the search area." Click="btnReInitSearchArea_Click" FontSize="10" />
+        <TextBlock Height="53" HorizontalAlignment="Left" Margin="29,18,0,0" Name="txtHeaderBlock" Text="" VerticalAlignment="Top" Width="466" TextWrapping="Wrap" Foreground="Blue" Grid.ColumnSpan="2" FontFamily="Arial" />
+        <TextBox Height="22" HorizontalAlignment="Left" Margin="233,358,0,0" Name="txtBlockCost" VerticalAlignment="Top" Width="30" ToolTip="Set a blocked cost, which is used when blocking nodes from the search area." FontSize="10" Text="100" Grid.Column="1" />
+        <Label Content="Block  Cost:" Height="24" HorizontalAlignment="Left" Margin="208,345,0,0" Name="label1" VerticalAlignment="Top" Width="58" FontSize="10" Grid.Column="1" FontFamily="Arial" />
+        <Button Content="Set" Height="23" HorizontalAlignment="Left" Margin="209,357,0,0" Name="btnSetBlockCost" VerticalAlignment="Top" Width="23" Click="btnSetBlockCost_Click" Grid.Column="1" />
+
+        <StackPanel Height="95" HorizontalAlignment="Left" Margin="191,82,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="73" Grid.Column="1">
+            <Border BorderBrush="#FF0000BA" BorderThickness="1">
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton Content="Set Start" HorizontalAlignment="Right" Name="btnSetStartLocation" Width="60" Checked="btnSetStartLocation_Checked" Unchecked="btnSetStartLocation_Unchecked" ToolTip="Set the start position." Margin="5" Foreground="SeaGreen" />
+                    <ToggleButton Content="Set End" Height="23" HorizontalAlignment="Right" Name="btnSetEndLocation" VerticalAlignment="Top" Width="60" Checked="btnSetEndLocation_Checked" Unchecked="btnSetEndLocation_Unchecked" ToolTip="Set the goal position." Margin="5,0,5,5" Foreground="Coral" />
+                    <ToggleButton Content="Set Blocks" Height="23" HorizontalAlignment="Right" Name="btnSetBlocks" VerticalAlignment="Top" Width="60" Checked="btnSetBlocks_Checked" Unchecked="btnSetBlocks_Unchecked" ToolTip="Set the blocked areas." Margin="5,0,5,5" Foreground="Red" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Button Content="Clear" FontSize="10" Height="18" HorizontalAlignment="Left" Margin="196,387,0,0" Name="btnClear" ToolTip="Clears the grid of all set nodes." VerticalAlignment="Top" Width="42" Grid.ColumnSpan="2" Click="btnClear_Click" />
+    </Grid>
+</Window>
